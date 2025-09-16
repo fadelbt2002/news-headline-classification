@@ -1,4 +1,4 @@
-# news-headline-classification# Beyond the Words: News Headline Classification
+# Beyond the Words: News Headline Classification
 
 A machine learning project that classifies news headlines by source (NBC vs Fox News) using advanced NLP models including LSTM, BERT, and GPT-2.
 
@@ -53,4 +53,167 @@ news-headline-classification/
 │   │   ├── bert_model.py      # Fine-tuned BERT classifier
 │   │   └── gpt2_model.py      # GPT-2 with POS features
 │   ├── evaluation/
-│   │   ├── _
+│   │   ├── __init__.py
+│   │   └── metrics.py         # Evaluation utilities
+│   └── utils/
+│       ├── __init__.py
+│       └── config.py          # Configuration settings
+├── notebooks/
+│   ├── 01_exploratory_analysis.ipynb
+│   ├── 02_data_preprocessing.ipynb
+│   ├── 03_model_training.ipynb
+│   └── 04_results_analysis.ipynb
+├── scripts/
+│   ├── train_models.py        # Training pipeline
+│   └── evaluate_models.py     # Evaluation pipeline
+├── results/
+│   ├── model_performance.json
+│   ├── confusion_matrices/
+│   └── visualizations/
+├── docs/
+│   └── final_report.pdf       # Detailed research report
+└── tests/
+    ├── __init__.py
+    ├── test_preprocessing.py
+    ├── test_models.py
+    └── test_scraper.py
+```
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/news-headline-classification.git
+cd news-headline-classification
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Data Collection
+
+```bash
+# Scrape headlines from provided URLs
+python scripts/collect_data.py --urls data/urls.csv --output data/raw/
+```
+
+### Training Models
+
+```bash
+# Train all models
+python scripts/train_models.py
+
+# Train specific model
+python scripts/train_models.py --model lstm --use-pos-tags
+```
+
+### Evaluation
+
+```bash
+# Evaluate all models
+python scripts/evaluate_models.py
+
+# Generate visualizations
+python scripts/generate_plots.py
+```
+
+## 🛠️ Usage Examples
+
+### Basic Classification
+
+```python
+from src.models.lstm_model import LSTMClassifier
+from src.preprocessing.text_cleaner import TextPreprocessor
+
+# Initialize model and preprocessor
+model = LSTMClassifier.load('results/best_lstm_model.pkl')
+preprocessor = TextPreprocessor(use_pos_tags=True)
+
+# Classify a headline
+headline = "Biden announces new climate initiative"
+processed = preprocessor.transform([headline])
+prediction = model.predict(processed)
+print(f"Predicted source: {'NBC' if prediction[0] == 0 else 'Fox News'}")
+```
+
+### Model Training
+
+```python
+from src.models.bert_model import BERTClassifier
+from src.utils.config import Config
+
+# Initialize and train BERT model
+config = Config()
+model = BERTClassifier(config)
+model.train(train_data, val_data, epochs=10)
+model.save('results/bert_model.pkl')
+```
+
+## 📊 Data Analysis
+
+Our exploratory data analysis revealed key differences between Fox News and NBC headlines:
+
+- **Length**: Fox News headlines average 12.3 words vs NBC's 11.8 words
+- **Vocabulary**: Different emphasis on political figures and institutions
+- **POS Patterns**: NBC uses more proper nouns and determiners; Fox uses more adjectives
+- **Stylistic Cues**: Punctuation and capitalization patterns differ significantly
+
+## 🔬 Methodology
+
+### Data Collection
+- Web scraping using Beautiful Soup
+- Headlines collected from provided URL lists
+- 80/20 train/validation split with stratification
+
+### Preprocessing Variants
+1. **Raw**: Minimal preprocessing (best for transformers)
+2. **Normalized**: Lowercasing, punctuation removal, lemmatization
+3. **Enhanced**: Raw text + POS tags (best for LSTM)
+
+### Model Architectures
+
+**LSTM**: BiLSTM with GloVe embeddings and POS tag embeddings
+**BERT**: Fine-tuned BERT-base-uncased with custom classification head
+**GPT-2**: GPT-2 with custom POS integration layer
+**Baseline**: TF-IDF features with Logistic Regression
+
+## 📝 Key Insights
+
+1. **Preprocessing Paradox**: Common NLP preprocessing techniques hurt performance
+2. **Context Limitations**: Short headlines limit the advantage of transformer models
+3. **Syntactic Signals**: Explicit POS features help simpler models compete with transformers
+4. **Style Over Content**: Classification relies more on stylistic differences than topic
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👥 Team
+
+- **Ria Subramanian** 
+- **Slater Fisch** 
+- **Fadel Batal**
+  
+## 📚 References
+
+1. HaCohen-Kerner, Y., Miller, J., & Yigal, G. (2020). The influence of preprocessing on text classification using a bag-of-words representation. PLOS ONE, 15(5), e0232525.
+
+## 🎓 Course Information
+
+**Course**: CIS 4190/5190: Applied Machine Learning  
+**Semester**: Spring 2025  
+**Project**: News Source Classification
+
+## 📧 Contact
+
+For questions about this project, please open an issue or contact the team members.
+
+---
+
+*This project demonstrates that careful feature engineering and preprocessing can be more important than model complexity for short-text classification tasks.*
