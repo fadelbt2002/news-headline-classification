@@ -118,11 +118,6 @@ python scripts/evaluate_models.py
 **GPT-2**: GPT-2 with custom POS integration layer
 **Baseline**: TF-IDF features with Logistic Regression
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-
 ## 📚 References
 [1] HaCohen-Kerner, Y., Miller, J., & Yigal, G. (2020). The influence of preprocessing on text classification
 using a bag-of-words representation. PLOS ONE, 15(5), e0232525. https://journals.plos.org/
