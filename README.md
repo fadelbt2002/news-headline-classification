@@ -30,13 +30,6 @@ This project investigates how different text preprocessing techniques and model 
 
 ```
 news-headline-classification/
-├── README.md
-├── requirements.txt
-├── setup.py
-├── data/
-│   ├── raw/                    # Original scraped data
-│   ├── processed/              # Cleaned and preprocessed data
-│   └── urls.csv               # Source URLs for scraping
 ├── src/
 │   ├── __init__.py
 │   ├── data_collection/
@@ -44,8 +37,7 @@ news-headline-classification/
 │   │   └── scraper.py         # Beautiful Soup web scraper
 │   ├── preprocessing/
 │   │   ├── __init__.py
-│   │   ├── text_cleaner.py    # Text preprocessing utilities
-│   │   └── feature_extractor.py # POS/NER feature extraction
+│   │   └── text_cleaner.py    # Text preprocessing & feature extraction
 │   ├── models/
 │   │   ├── __init__.py
 │   │   ├── baseline.py        # TF-IDF + Logistic Regression
@@ -58,25 +50,6 @@ news-headline-classification/
 │   └── utils/
 │       ├── __init__.py
 │       └── config.py          # Configuration settings
-├── notebooks/
-│   ├── 01_exploratory_analysis.ipynb
-│   ├── 02_data_preprocessing.ipynb
-│   ├── 03_model_training.ipynb
-│   └── 04_results_analysis.ipynb
-├── scripts/
-│   ├── train_models.py        # Training pipeline
-│   └── evaluate_models.py     # Evaluation pipeline
-├── results/
-│   ├── model_performance.json
-│   ├── confusion_matrices/
-│   └── visualizations/
-├── docs/
-│   └── final_report.pdf       # Detailed research report
-└── tests/
-    ├── __init__.py
-    ├── test_preprocessing.py
-    ├── test_models.py
-    └── test_scraper.py
 ```
 
 ## 🚀 Quick Start
