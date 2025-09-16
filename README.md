@@ -183,21 +183,31 @@ Our exploratory data analysis revealed key differences between Fox News and NBC 
 **GPT-2**: GPT-2 with custom POS integration layer
 **Baseline**: TF-IDF features with Logistic Regression
 
-## 📝 Key Insights
-
-1. **Preprocessing Paradox**: Common NLP preprocessing techniques hurt performance
-2. **Context Limitations**: Short headlines limit the advantage of transformer models
-3. **Syntactic Signals**: Explicit POS features help simpler models compete with transformers
-4. **Style Over Content**: Classification relies more on stylistic differences than topic
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
 ## 📚 References
+[1] HaCohen-Kerner, Y., Miller, J., & Yigal, G. (2020). The influence of preprocessing on text classification
+using a bag-of-words representation. PLOS ONE, 15(5), e0232525. https://journals.plos.org/
+plosone/article?id=10.1371/journal.pone.02325258
 
-1. HaCohen-Kerner, Y., Miller, J., & Yigal, G. (2020). The influence of preprocessing on text classification using a bag-of-words representation. PLOS ONE, 15(5), e0232525.
+[2] Aggarwal, A., Agrahari, A., & Janghel, R. R. (2020). Classification of fake news by fine-tuning deep
+bidirectional transformer-based language model. EAI Endorsed Transactions on Scalable Information
+Systems, 7(25). https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7519200
+
+[3] Sabiri, B., Elhassouny, A., & Maalmi, K. (2023). Analyzing BERT’s performance compared to tradi-
+tional text classification models. In Proceedings of the 25th International Conference on Enterprise In-
+formation Systems (ICEIS), Vol. 2, pp. 572–582. https://www.scitepress.org/Papers/2023/118605
+
+[4] Chotirat, S., & Meesad, P. (2021). Part-of-speech tagging enhancement for question classification
+with deep learning. Heliyon, 7(10), e08216. https://www.ncbi.nlm.nih.gov/pmc/articles/
+PMC8540490
+
+[5] Tenney, I., Das, D., & Pavlick, E. (2019). BERT rediscovers the classical NLP pipeline. In Proceedings
+of the 57th Annual Meeting of the Association for Computational Linguistics (ACL), pp. 4593–4601.
+https://arxiv.org/abs/1905.05950
 
 
 ## 📧 Contact
