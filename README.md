@@ -99,47 +99,6 @@ python scripts/evaluate_models.py
 
 ```
 
-## 🛠️ Usage Examples
-
-### Basic Classification
-
-```python
-from src.models.lstm_model import LSTMClassifier
-from src.preprocessing.text_cleaner import TextPreprocessor
-
-# Initialize model and preprocessor
-model = LSTMClassifier.load('results/best_lstm_model.pkl')
-preprocessor = TextPreprocessor(use_pos_tags=True)
-
-# Classify a headline
-headline = "Biden announces new climate initiative"
-processed = preprocessor.transform([headline])
-prediction = model.predict(processed)
-print(f"Predicted source: {'NBC' if prediction[0] == 0 else 'Fox News'}")
-```
-
-### Model Training
-
-```python
-from src.models.bert_model import BERTClassifier
-from src.utils.config import Config
-
-# Initialize and train BERT model
-config = Config()
-model = BERTClassifier(config)
-model.train(train_data, val_data, epochs=10)
-model.save('results/bert_model.pkl')
-```
-
-## 📊 Data Analysis
-
-Our exploratory data analysis revealed key differences between Fox News and NBC headlines:
-
-- **Length**: Fox News headlines average 12.3 words vs NBC's 11.8 words
-- **Vocabulary**: Different emphasis on political figures and institutions
-- **POS Patterns**: NBC uses more proper nouns and determiners; Fox uses more adjectives
-- **Stylistic Cues**: Punctuation and capitalization patterns differ significantly
-
 ## 🔬 Methodology
 
 ### Data Collection
