@@ -194,20 +194,11 @@ Our exploratory data analysis revealed key differences between Fox News and NBC 
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Team
 
-- **Ria Subramanian** 
-- **Slater Fisch** 
-- **Fadel Batal**
-  
 ## 📚 References
 
 1. HaCohen-Kerner, Y., Miller, J., & Yigal, G. (2020). The influence of preprocessing on text classification using a bag-of-words representation. PLOS ONE, 15(5), e0232525.
 
-## 🎓 Course Information
-
-**Course**: CIS 4190/5190: Applied Machine Learning  
-**Project**: News Source Classification
 
 ## 📧 Contact
 
