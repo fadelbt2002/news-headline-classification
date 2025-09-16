@@ -30,6 +30,8 @@ This project investigates how different text preprocessing techniques and model 
 
 ```
 news-headline-classification/
+├── README.md
+├── requirements.txt
 ├── src/
 │   ├── __init__.py
 │   ├── data_collection/
@@ -37,7 +39,7 @@ news-headline-classification/
 │   │   └── scraper.py         # Beautiful Soup web scraper
 │   ├── preprocessing/
 │   │   ├── __init__.py
-│   │   └── text_cleaner.py    # Text preprocessing & feature extraction
+│   │   ├── text_cleaner.py    # Text preprocessing utilities
 │   ├── models/
 │   │   ├── __init__.py
 │   │   ├── baseline.py        # TF-IDF + Logistic Regression
@@ -50,6 +52,9 @@ news-headline-classification/
 │   └── utils/
 │       ├── __init__.py
 │       └── config.py          # Configuration settings
+├── scripts/
+│   ├── train_models.py        # Training pipeline
+│   └── evaluate_models.py     # Evaluation pipeline
 ```
 
 ## 🚀 Quick Start
