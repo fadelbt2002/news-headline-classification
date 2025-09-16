@@ -97,8 +97,6 @@ python scripts/train_models.py --model lstm --use-pos-tags
 # Evaluate all models
 python scripts/evaluate_models.py
 
-# Generate visualizations
-python scripts/generate_plots.py
 ```
 
 ## 🛠️ Usage Examples
