@@ -142,6 +142,6 @@ https://arxiv.org/abs/1905.05950
 
 ## 📧 Contact
 
-For questions about this project, please open an issue or contact the team members.
+For questions about this project, please open an issue.
 
 ---
