@@ -207,7 +207,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🎓 Course Information
 
 **Course**: CIS 4190/5190: Applied Machine Learning  
-**Semester**: Spring 2025  
 **Project**: News Source Classification
 
 ## 📧 Contact
@@ -215,5 +214,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For questions about this project, please open an issue or contact the team members.
 
 ---
-
-*This project demonstrates that careful feature engineering and preprocessing can be more important than model complexity for short-text classification tasks.*
